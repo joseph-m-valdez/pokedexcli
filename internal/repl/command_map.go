@@ -7,7 +7,7 @@ import (
 	"errors"
 )
 
-func commandMap(cfg *config.Config) error {
+func commandMap(cfg *config.Config, args ...string) error {
 	resp, err := cfg.APIClient.ListLocationAreas(cfg.NextLocationURL)
 
 	if err != nil {
@@ -24,7 +24,7 @@ func commandMap(cfg *config.Config) error {
 	return nil
 }
 
-func commandMapb(cfg *config.Config) error {
+func commandMapb(cfg *config.Config, args ...string) error {
 	if cfg.PrevLocationURL == nil {
 		return errors.New("your'e on the first page")
 	}

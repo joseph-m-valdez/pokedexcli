@@ -11,6 +11,7 @@ import (
 
 func Main() {
 	cfg := config.Config {
+		CaughtPokemon: map[string]api.Pokemon{},
 		APIClient: api.NewClient(time.Hour),
 	}
 
